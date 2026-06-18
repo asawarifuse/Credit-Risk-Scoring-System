@@ -37,3 +37,17 @@ Credit-Risk-Scoring-System/
 ├── docs/ ← Project documentation
 
 └── README.md
+
+### Day 2 — Eligibility Criteria Logic ✅
+- Built 5 eligibility checks (Age 21–60, Income ≥3L, Credit Score ≥650, Employment ≥1yr, No Defaulter History)
+- Nested IF/AND chains for pass/fail per criterion
+- Combined eligibility using AND across all checks
+- Rejection reason column using TEXTJOIN
+- Result: 127 Eligible / 373 Ineligible
+
+### Day 3 — Weighted Scoring Engine ✅
+- 7 scoring criteria with IF-based scoring bands
+- Criteria: Age, Income, Employment Years, Credit Score, Existing Loans, Collateral Value, Defaulter History
+- Each criterion scored 0 to its max, total composite: 0–100
+- Remarks: Strong (70+), Moderate (50–69), Weak (<50), Not Scored (Ineligible)
+- Avg composite score, MAX/MIN verification
