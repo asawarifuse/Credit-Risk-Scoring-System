@@ -51,3 +51,10 @@ Credit-Risk-Scoring-System/
 - Each criterion scored 0 to its max, total composite: 0–100
 - Remarks: Strong (70+), Moderate (50–69), Weak (<50), Not Scored (Ineligible)
 - Avg composite score, MAX/MIN verification
+
+### Day 4 — Decision Classification + LAMBDA + LET ✅
+- Built custom LAMBDA function: CLASSIFY_CREDIT
+- Uses LET to name intermediate logic (IsIneligible, IsStrong, IsModerate)
+- Auto-classifies: Approve (70+), Review (50–69), Reject (<50 or Ineligible)
+- LAMBDA deployed across all 500 rows
+- Result: 106 Approve, 20 Review, 374 Reject
