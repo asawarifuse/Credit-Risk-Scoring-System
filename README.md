@@ -58,3 +58,9 @@ Credit-Risk-Scoring-System/
 - Auto-classifies: Approve (70+), Review (50–69), Reject (<50 or Ineligible)
 - LAMBDA deployed across all 500 rows
 - Result: 106 Approve, 20 Review, 374 Reject
+
+### Day 5 — Dynamic Arrays + Smart Lookups ✅
+- FILTER + SORT to extract Approved / Review / Rejected dynamically
+- UNIQUE score bands
+- Summary counts above each section
+- All lists update live with source data
