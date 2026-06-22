@@ -64,3 +64,9 @@ Credit-Risk-Scoring-System/
 - UNIQUE score bands
 - Summary counts above each section
 - All lists update live with source data
+
+### Day 6 — Audit Trail (Formula Layer) ✅
+- Auto-log all 500 applicants: Timestamp, ID, Score, Decision, Reason
+- Unique timestamps per row
+- Reason strings explain each decision
+- VBA static timestamp upgrade scheduled for Day 8
