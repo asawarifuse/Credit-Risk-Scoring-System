@@ -89,3 +89,9 @@ The rule engine is operational: eligibility → scoring → classification → a
 - Reason strings for each decision
 - Clears old log before refresh
 - 500 records written in under 1 second
+
+### Day 9 — One-Click Automation Macro ✅
+- RunFullEngine macro: refresh → score → classify → audit log → save
+- Form control button on DECISION_OUTPUT sheet
+- Screen updating disabled for speed
+- Error handler with user-friendly message box
