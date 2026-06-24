@@ -82,3 +82,10 @@ Credit-Risk-Scoring-System/
 
 ## ✅ PHASE 1 COMPLETE — Intelligence Layer
 The rule engine is operational: eligibility → scoring → classification → audit trail.
+
+### Day 8 — VBA Audit Log Writer ✅
+- Macro stamps static timestamps per record (no volatile formulas)
+- Loops through all 500 applicants
+- Reason strings for each decision
+- Clears old log before refresh
+- 500 records written in under 1 second
