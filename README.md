@@ -95,3 +95,9 @@ The rule engine is operational: eligibility → scoring → classification → a
 - Form control button on DECISION_OUTPUT sheet
 - Screen updating disabled for speed
 - Error handler with user-friendly message box
+
+### Day 10 — Error Handling + Validation Layer ✅
+- ValidateRawData macro: checks Age, Credit Score, Income, Loan Amount, missing IDs
+- RunFullEngine calls validation before processing
+- On Error GoTo error handler with user-friendly messages
+- Screen updating + calculation control for stability
