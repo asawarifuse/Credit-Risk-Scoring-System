@@ -109,3 +109,9 @@ The rule engine is operational: eligibility → scoring → classification → a
 - Risk band donut chart with black center hole
 - Dynamic timestamp in subtitle
 - Hidden data tables for clean presentation
+
+### Day 12 — What-If Panel ✅
+- 7 spin buttons (Form Controls) linked to scoring weights
+- Adjustable weight percentages: Age, Income, Employment, Credit Score, Existing Loans, Collateral, Defaulter
+- Dynamic weighted score column for comparison with original composite
+- Live recalculation — dashboard reflects changes instantly
