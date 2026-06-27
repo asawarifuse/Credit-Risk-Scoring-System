@@ -115,3 +115,10 @@ The rule engine is operational: eligibility → scoring → classification → a
 - Adjustable weight percentages: Age, Income, Employment, Credit Score, Existing Loans, Collateral, Defaulter
 - Dynamic weighted score column for comparison with original composite
 - Live recalculation — dashboard reflects changes instantly
+
+### Day 13 — Conditional Formatting Intelligence ✅
+- RAW_DATA: Data bars (Income), Color scales (Credit Score, Loan Amount), Defaulter flags
+- SCORING_ENGINE: Eligibility TRUE/FALSE coloring, Score gradient, Remarks color-coded
+- DECISION_OUTPUT: Decision colors (Approve/Review/Reject), Score bars, Band coloring
+- AUDIT_TRAIL: Score gradient, Decision colors
+- All 4 sheets visually intelligent — instant risk identification
