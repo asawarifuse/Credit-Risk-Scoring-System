@@ -101,3 +101,11 @@ The rule engine is operational: eligibility → scoring → classification → a
 - RunFullEngine calls validation before processing
 - On Error GoTo error handler with user-friendly messages
 - Screen updating + calculation control for stability
+
+### Day 11 — Executive Dashboard ✅
+- Dark theme (#1C1C1C) with navy title bar
+- 3 KPI cards: Approved (106, 21%), Review (20, 4%), Rejected (374, 75%)
+- Score distribution bar chart (5 bands, color-coded: purple to dark blue)
+- Risk band donut chart with black center hole
+- Dynamic timestamp in subtitle
+- Hidden data tables for clean presentation
