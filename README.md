@@ -1,124 +1,98 @@
-﻿# Credit Risk Scoring System
+﻿# 🏦 Credit Risk Scoring System
 
-**Rule-based credit risk decision engine with LAMBDA classification, VBA automation, audit trail, and logistic regression benchmark.**
+**End-to-end rule-based credit risk decision engine built in Excel. Weighted scoring, LAMBDA classification, VBA automation, audit trail, and what-if modeling.**
 
 ---
 
-## 📅 Project Timeline (14 Days)
+## 📊 Project Overview
 
-### Day 1 — Project Setup & Dataset Design ✅
-- Created professional folder structure
-- Initialized private GitHub repository
-- Set up Excel workbook with 5 sheets (RAW_DATA, SCORING_ENGINE, DECISION_OUTPUT, AUDIT_TRAIL, DASHBOARD)
-- Enabled Developer Tab, Macros, Iterative Calculation
-- Generated 500 synthetic loan applicant records via Mockaroo
-- Built `ApplicantData` table with 12 KPI columns (Applicant_ID, Age, Annual_Income, Employment_Type, Employment_Years, Credit_Score, Existing_Loans, Loan_Amount_Requested, Loan_Tenure_Years, Monthly_EMI_Obligation, Collateral_Value, Defaulter_History)
+Evaluates 500 synthetic loan applicants through a 3-layer pipeline:
+- **Eligibility Screening** → 5 business rules
+- **Weighted Scoring** → 7 criteria, 0–100 composite
+- **Decision Classification** → LAMBDA + LET: Approve / Review / Reject
+
+| Result | Count | % |
+|--------|-------|---|
+| Approved | 106 | 21% |
+| Review | 20 | 4% |
+| Rejected | 374 | 75% |
 
 ---
 
 ## 🛠 Tech Stack
-- Excel (LAMBDA, LET, SUMPRODUCT, Dynamic Arrays)
-- VBA Macros
-- Power Query
-- Logistic Regression (Python benchmark)
-- GitHub
+
+| Layer | Tools |
+|-------|-------|
+| Core Engine | Excel (LAMBDA, LET, Dynamic Arrays, SUMPRODUCT, IF/AND/OR) |
+| Automation | VBA Macros (One-click engine, Audit log, Error handling) |
+| Dashboard | Dark theme, KPI cards, Score distribution chart, Donut chart |
+| What-If | Spin buttons, Weight comparison table |
+| Version Control | Git + GitHub |
 
 ---
 
-## 📁 Folder Structure
-Credit-Risk-Scoring-System/
+## 📁 Sheets
 
-├── data/ ← Raw CSV datasets
-
-├── excel/ ← Main .xlsm workbook
-
-├── screenshots/ ← Dashboard screenshots
-
-├── docs/ ← Project documentation
-
-└── README.md
-
-### Day 2 — Eligibility Criteria Logic ✅
-- Built 5 eligibility checks (Age 21–60, Income ≥3L, Credit Score ≥650, Employment ≥1yr, No Defaulter History)
-- Nested IF/AND chains for pass/fail per criterion
-- Combined eligibility using AND across all checks
-- Rejection reason column using TEXTJOIN
-- Result: 127 Eligible / 373 Ineligible
-
-### Day 3 — Weighted Scoring Engine ✅
-- 7 scoring criteria with IF-based scoring bands
-- Criteria: Age, Income, Employment Years, Credit Score, Existing Loans, Collateral Value, Defaulter History
-- Each criterion scored 0 to its max, total composite: 0–100
-- Remarks: Strong (70+), Moderate (50–69), Weak (<50), Not Scored (Ineligible)
-- Avg composite score, MAX/MIN verification
-
-### Day 4 — Decision Classification + LAMBDA + LET ✅
-- Built custom LAMBDA function: CLASSIFY_CREDIT
-- Uses LET to name intermediate logic (IsIneligible, IsStrong, IsModerate)
-- Auto-classifies: Approve (70+), Review (50–69), Reject (<50 or Ineligible)
-- LAMBDA deployed across all 500 rows
-- Result: 106 Approve, 20 Review, 374 Reject
-
-### Day 5 — Dynamic Arrays + Smart Lookups ✅
-- FILTER + SORT to extract Approved / Review / Rejected dynamically
-- UNIQUE score bands
-- Summary counts above each section
-- All lists update live with source data
-
-### Day 6 — Audit Trail (Formula Layer) ✅
-- Auto-log all 500 applicants: Timestamp, ID, Score, Decision, Reason
-- Unique timestamps per row
-- Reason strings explain each decision
-- VBA static timestamp upgrade scheduled for Day 8
-
-### Day 7 — Phase 1 Review + Stress Test ✅
-- Verified all 500 rows for consistency
-- Checked min/max edge cases (Age 21–65, Credit 302–900, Income 1.5L–25L)
-- Manual spot check of 3 random applicants — logic verified
-- Zero formula errors across all sheets
-- Engine works end-to-end
+| Sheet | Purpose |
+|-------|---------|
+| RAW_DATA | 500 applicants × 12 criteria |
+| SCORING_ENGINE | Eligibility checks + Weighted scoring + What-If panel |
+| DECISION_OUTPUT | LAMBDA classification + Dynamic filtered lists |
+| AUDIT_TRAIL | VBA-generated log with timestamps + reasons |
+| DASHBOARD | Executive KPI cards, charts, insights |
 
 ---
 
-## ✅ PHASE 1 COMPLETE — Intelligence Layer
-The rule engine is operational: eligibility → scoring → classification → audit trail.
+## 📅 Build Timeline (14 Days)
 
-### Day 8 — VBA Audit Log Writer ✅
-- Macro stamps static timestamps per record (no volatile formulas)
-- Loops through all 500 applicants
-- Reason strings for each decision
-- Clears old log before refresh
-- 500 records written in under 1 second
+### Phase 1 — Intelligence Layer
+- Day 1 — Project setup, 500 applicant dataset
+- Day 2 — Eligibility criteria (nested IF/AND, rejection reasons)
+- Day 3 — Weighted scoring engine (7 criteria, 0–100)
+- Day 4 — LAMBDA + LET classification (CLASSIFY_CREDIT)
+- Day 5 — Dynamic arrays (FILTER, SORT)
+- Day 6 — Audit trail (formula layer)
+- Day 7 — Phase 1 stress test + validation
 
-### Day 9 — One-Click Automation Macro ✅
-- RunFullEngine macro: refresh → score → classify → audit log → save
-- Form control button on DECISION_OUTPUT sheet
-- Screen updating disabled for speed
-- Error handler with user-friendly message box
+### Phase 2 — Automation + Dashboard
+- Day 8 — VBA audit log writer (static timestamps)
+- Day 9 — One-click automation macro + button
+- Day 10 — Error handling + data validation layer
+- Day 11 — Executive dashboard (dark theme, KPI, charts, insights)
+- Day 12 — What-if panel (spin buttons, weight comparison)
+- Day 13 — Conditional formatting intelligence
+- Day 14 — Polish, screenshots, portfolio pack
 
-### Day 10 — Error Handling + Validation Layer ✅
-- ValidateRawData macro: checks Age, Credit Score, Income, Loan Amount, missing IDs
-- RunFullEngine calls validation before processing
-- On Error GoTo error handler with user-friendly messages
-- Screen updating + calculation control for stability
+---
 
-### Day 11 — Executive Dashboard ✅
-- Dark theme (#1C1C1C) with navy title bar
-- 3 KPI cards: Approved (106, 21%), Review (20, 4%), Rejected (374, 75%)
-- Score distribution bar chart (5 bands, color-coded: purple to dark blue)
-- Risk band donut chart with black center hole
-- Dynamic timestamp in subtitle
-- Hidden data tables for clean presentation
+## 🚀 Key Features
 
-### Day 12 — What-If Panel ✅
-- 7 spin buttons (Form Controls) linked to scoring weights
-- Adjustable weight percentages: Age, Income, Employment, Credit Score, Existing Loans, Collateral, Defaulter
-- Dynamic weighted score column for comparison with original composite
-- Live recalculation — dashboard reflects changes instantly
+- **Cognitive Rule Engine** — Transparent, auditable decision logic
+- **One-Click Automation** — Refresh → Score → Classify → Audit Log → Save
+- **Audit Trail** — Timestamped log with reason strings (regulatory-ready)
+- **What-If Modeling** — Adjust scoring weights live, compare outcomes
+- **Professional Dashboard** — Dark theme, KPI cards, color-coded charts
+- **Error Handling** — Input validation, user-friendly alerts
 
-### Day 13 — Conditional Formatting Intelligence ✅
-- RAW_DATA: Data bars (Income), Color scales (Credit Score, Loan Amount), Defaulter flags
-- SCORING_ENGINE: Eligibility TRUE/FALSE coloring, Score gradient, Remarks color-coded
-- DECISION_OUTPUT: Decision colors (Approve/Review/Reject), Score bars, Band coloring
-- AUDIT_TRAIL: Score gradient, Decision colors
-- All 4 sheets visually intelligent — instant risk identification
+---
+
+## 📸 Screenshots
+
+![Dashboard](screenshots/dashboard.png)
+![What-If Panel](screenshots/whatif-panel.png)
+![Decision Output](screenshots/decision-output.png)
+![Audit Trail](screenshots/audit-trail.png)
+
+---
+
+## 🔮 Future Upgrades
+
+- Logistic Regression benchmark (Python)
+- Power Query for automated data loading
+- Model comparison (Rule Engine vs Statistical Model)
+
+---
+
+## 👤 Built By
+
+**Asawari Fuse**
